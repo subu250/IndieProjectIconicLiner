@@ -58,7 +58,9 @@ Unit Testing
 IDE: IntelliJ IDEA
 
 **Design**
-https://github.com/subu250/IndieProjectIconicLiner/blob/master/DesignDocuments/userStories.md
+
+User Stories
+
 Screen Design
 
 
