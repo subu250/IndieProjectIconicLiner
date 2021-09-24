@@ -6,7 +6,7 @@
 
 ### View Page
 
-![View Page](wireframes/view.png)
+![View Page](wireFrames/view.png)
 
 
 
