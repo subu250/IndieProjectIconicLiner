@@ -59,10 +59,12 @@ IDE: IntelliJ IDEA
 **Design**
 * [User Stories](https://github.com/subu250/IndieProjectIconicLiner/blob/master/DesignDocuments/userStories.md)
 * [Design](https://github.com/subu250/IndieProjectIconicLiner/blob/master/DesignDocuments/Design.png)
-* Screen Design
+  
+* [Screen Design](https://github.com/subu250/IndieProjectIconicLiner/blob/master/DesignDocuments/Screens.md)
+ 
+* [Project Plan](https://github.com/subu250/IndieProjectIconicLiner/blob/master/ProjectPlan.md)
 
-[Project Plan](https://github.com/subu250/IndieProjectIconicLiner/blob/master/ProjectPlan.md)
+
 
 [Weekly Reflection](https://github.com/subu250/IndieProjectIconicLiner/blob/master/WeeklyReflection.md)
 
-* [Time Log](https://github.com/subu250/IndieProjectIconicLiner/blob/master/TimeLog.md)

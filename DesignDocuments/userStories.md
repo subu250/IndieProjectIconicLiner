@@ -29,6 +29,13 @@ As a registered user or admin, I want to be able to be able to reset my password
 ### Edit user profile
 As a registered user or admin, I want to be able to edit my profile.
 
+### Delete user profile
+As a registered user or admin, I want to be able to delete my profile.
+
+### Update user profile
+
+As a registered user or admin, I want to be able to update my profile.
+
 ### Report Inappropriate Items
 As any user, I want to be able to report inappropriate items about the products, like reaction, allergy.
 

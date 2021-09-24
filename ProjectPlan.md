@@ -1,13 +1,21 @@
 
-## Week 4
-- [ ] Create project repository on GitHub
+## Week 3
+
+-[ ] Create project repository on GitHub
 - [ ] Create project structure in intellij and push
-- [ ] Add link to list of indie projects in student repo.
+- [ ] Add a link to list of indie projects in student repo.
 - [ ] Complete Problem Statement
 - [ ] Determine possible Web Services or APIs to use
 - [ ] List technologies, versions and how they will be used
 - [ ] Weekly reflection
 - [ ] Write project plan
+
+## Week 4
+- [ ] Practice on intelli J features.
+- [ ] Learning on ideas how to make good functioning apps.
+- [ ] scenarios on which functionalities are suitable for the features and which functionalities used for jsp, servlets
+- [ ] Reviewed the wireframes with a potential users.
+- [ ] Learning and understanding on using dao on the project.
 
 ## Week 5
 
