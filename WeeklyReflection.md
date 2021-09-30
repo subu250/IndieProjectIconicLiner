@@ -1,9 +1,6 @@
 **Weekly Reflection**
 
 ### Week 2
-09/8/2021 - 5 hours
-
-Tasks Completed:
 
 Chose a project goal
 
@@ -23,13 +20,47 @@ https://redheadlabs.com/beauty-website-design/
 
 https://www.oracle.com/technical-resources/articles/javase/jscoverview.html
 
-
-
 ### Week 3
-
-1/29/2016
 
 This week started working on assignments, and videos related to the project.
 
 Learned more about Intelli J features.
+
+### Week 4
+
+Learning and analysing about the project.
+
+### Week 5
+Will work on adding users.
+
+### Week 6
+Taking a look on css, html
+
+### Week 7
+will work on table creation and test data.
+
+### Week 8
+Trying to build on display screen.
+
+### Week 9
+Working on Deployment task 
+
+### Week 10
+Work on Search functionalities.
+
+### Week 11
+Work on promotion functionalities and email notification features
+
+### Week 12
+Adding the images according to the features.
+
+### Week 13
+Try to run the application.
+
+### Week 14
+Debugging the code if failures occurs.
+
+
+
+
 
