@@ -33,7 +33,7 @@ public class UserDaoTest {
     void insertSuccess() {
 
         User user = new User();
-        user.setId(10);
+        user.setId(11);
         user.setFirstName("John");
         user.setLastName("Doe");
         int id = dao.insert(user);
@@ -56,10 +56,10 @@ public class UserDaoTest {
     @Test
     void updateSuccess() {
         String firstname = "James";
-        User userToUpdate = dao.getById(5);
+        User userToUpdate = dao.getById(8);
         userToUpdate.setFirstName(firstname);
         dao.saveOrUpdate(userToUpdate);
-        User retrievedUser= dao.getById(5);
+        User retrievedUser= dao.getById(8);
         assertEquals(firstname, retrievedUser.getFirstName());
     }
 
@@ -68,8 +68,8 @@ public class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(6));
-        assertNull(dao.getById(6));
+        dao.delete(dao.getById(9));
+        assertNull(dao.getById(9));
     }
 
     /**
