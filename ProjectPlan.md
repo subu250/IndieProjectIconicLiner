@@ -19,16 +19,66 @@
 
 ## Week 5
 
-This week's focus is the User Sign Up Story
+This week's focus is the User story
 - [ ] Create the database
 - [ ] Select Template | Design CSS
 - [ ] new user jsp
 - [ ] user entity (java class)
 - [ ] user table
+
+## Week 6
+
 - [ ] user dao to add user to db (java class)
 - [ ] unit test dao add user functionality
+- [ ] product  dao to add product to db (java class)
+- [ ] unit test dao add product functionality
 
-## Week 15
+## Week 7
+
+This week's focus is the product Story
+- [ ] user dao to add user to db (java class)
+- [ ] unit test dao add user functionality
+- [ ] product  dao to add product to db (java class)
+- [ ] unit test dao add product functionality
+
+## Week 8
+
+- [ ] product dao to add user to db (java class)
+- [ ] unit test dao add product functionality
+- [ ] product  dao to add product to db (java class)
+- [ ] unit test dao add user functionality
+
+## Week 9
+
+This week's focus is the product Story
+- [ ] one to many relationship test
+- [ ] unit test dao 
+- [ ] Many to Many relationship
+
+## Week 10
+
+- [ ] add Sign in user story
+- [ ] add Sign UP user story
+- [ ] unit test on  functionality
+
+## Week 11
+
+- [ ] create product table
+- [ ] add data on table
+- [ ] run the unit test 
+
+## Week 12
+
+- [ ] Add more features
+- [ ] try to focus on the requirements
+
+## Week 13
+
+- [ ] Run the application 
+- [ ] add more tests
+- [ ] work on feedback
+
+## Week 14
 
 - [ ] Final Presentation
 - [ ] Create video, add a video link to readme.md

@@ -23,14 +23,7 @@ public class UserDaoTest {
         database.runSQL("cleandb.sql");
     }
 
-    /**
-     * Verify successful retrieval of all Users
-     */
-    @Test
-    void getAllSuccess() {
-        List<User> users = dao.getAll();
-        assertEquals(3, users.size());
-    }
+
 
     /**
      * Verify successful insert of User
@@ -40,7 +33,7 @@ public class UserDaoTest {
     void insertSuccess() {
 
         User user = new User();
-        user.setId(1);
+        user.setId(10);
         user.setFirstName("John");
         user.setLastName("Doe");
         int id = dao.insert(user);
@@ -54,7 +47,7 @@ public class UserDaoTest {
     void getByIdSuccess() {
         User retrievedUser = dao.getById(1);
         assertNotNull(retrievedUser);
-        assertEquals("Users", retrievedUser.getLastName());
+        assertEquals("Sierra", retrievedUser.getLastName());
     }
 
     /**
@@ -63,11 +56,11 @@ public class UserDaoTest {
     @Test
     void updateSuccess() {
         String firstname = "James";
-        User userToUpdate = dao.getById(2);
+        User userToUpdate = dao.getById(5);
         userToUpdate.setFirstName(firstname);
         dao.saveOrUpdate(userToUpdate);
-        User retrievedUser= dao.getById(2);
-        assertEquals(firstname, retrievedUser.getLastName());
+        User retrievedUser= dao.getById(5);
+        assertEquals(firstname, retrievedUser.getFirstName());
     }
 
     /**
@@ -75,8 +68,17 @@ public class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        dao.delete(dao.getById(6));
+        assertNull(dao.getById(6));
+    }
+
+    /**
+     * Verify successful retrieval of all Users
+     */
+    @Test
+    void getAllSuccess() {
+        List<User> users = dao.getAll();
+        assertEquals(5, users.size());
     }
 
 }
