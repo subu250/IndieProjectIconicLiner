@@ -20,23 +20,23 @@ https://redheadlabs.com/beauty-website-design/
 
 https://www.oracle.com/technical-resources/articles/javase/jscoverview.html
 
-### Week 3
+### Week 3 Spend-3 hours
 
 This week started working on assignments, and videos related to the project.
 
 Learned more about Intelli J features.
 
-### Week 4
+### Week 4 Spend 9 hours
 
 Learning and analysing about the project.
 
-### Week 5
+### Week 5 spend 10 hours
 Will work on adding users.
 
-### Week 6
+### Week 6 - 5 hours
 Taking a look on css, html
 
-### Week 7
+### Week 7- Spend 5 hours
 will work on table creation and test data.
 
 ### Week 8
