@@ -1,7 +1,25 @@
 package edu.matc.entity;
+import org.hibernate.annotations.GenericGenerator;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import java.awt.print.Book;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.*;
+
+
+@Entity(name = "User")
+@Table(name= "user")
 
 /**
  * A class to represent a user.
@@ -9,11 +27,20 @@ import java.time.temporal.ChronoUnit;
  * @author subu
  */
 public class User {
+
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
-    private int  id;
 
-
+ //   @OneToMany(mappedBy = "User", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     /**
      * Instantiates a new User.
      */
