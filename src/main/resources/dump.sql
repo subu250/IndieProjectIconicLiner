@@ -51,8 +51,8 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `brand` varchar(70) DEFAULT NULL,
-                        `user_id` int(11) DEFAULT NULL,
-                        'type' varchar(70) DEFAULT NULL,
+                        `type` varchar(70) DEFAULT NULL,
+                        `user_id` int not null,
                         PRIMARY KEY (`id`),
                         UNIQUE KEY `product_id_uindex` (`id`),
                         KEY `product_user_id_fk` (`user_id`),
@@ -66,17 +66,6 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Loreal',1, 'eyeliner'),(2,'Rimmel',3,'Liquid eyeliner'),(4,'Revlon',5,'eyepencil');
+INSERT INTO `product` VALUES (1,'Loreal','eyeliner',1),(2,'Rimmel','Liquid eyeliner',3),(4,'Revlon','eyepencil',5);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-02-07 18:23:40

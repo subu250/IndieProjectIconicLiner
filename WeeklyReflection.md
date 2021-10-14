@@ -33,10 +33,12 @@ Learning and analysing about the project.
 ### Week 5 spend 10 hours
 Will work on adding users.
 
-### Week 6 - 5 hours
-Taking a look on css, html
+### Week-6 Spend 5 hours.
+UserDao and Product Dao added and UserDao unit test. completed.
+Create a User and product table.
+Deployed User display exercise application to AWS Elastic Beanstalk.
 
-### Week 7- Spend 5 hours
+### Week 7 
 will work on table creation and test data.
 
 ### Week 8
