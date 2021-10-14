@@ -1,37 +1,36 @@
 
 ## Week 3
 
--[ ] Create project repository on GitHub
-- [ ] Create project structure in intellij and push
-- [ ] Add a link to list of indie projects in student repo.
-- [ ] Complete Problem Statement
-- [ ] Determine possible Web Services or APIs to use
-- [ ] List technologies, versions and how they will be used
-- [ ] Weekly reflection
-- [ ] Write project plan
+- [x] Create project repository on GitHub
+- [x] Create project structure in intellij and push
+- [x]  Add a link to list of indie projects in student repo.
+- [x]  Complete Problem Statement
+- [x]  Determine possible Web Services or APIs to use
+- [x]  List technologies, versions and how they will be used
+- [x]  Weekly reflection
+- [x]  Write project plan
 
 ## Week 4
-- [ ] Practice on intelli J features.
-- [ ] Learning on ideas how to make good functioning apps.
-- [ ] scenarios on which functionalities are suitable for the features and which functionalities used for jsp, servlets
-- [ ] Reviewed the wireframes with a potential users.
-- [ ] Learning and understanding on using dao on the project.
+- [x]  Practice on intelli J features.
+- [x]  Learning on ideas how to make good functioning apps.
+- [x]  scenarios on which functionalities are suitable for the features and which functionalities used for jsp, servlets
+- [x]  Reviewed the wireframes with a potential users.
+- [x]  Learning and understanding on using dao on the project.
 
 ## Week 5
 
 This week's focus is the User story
-- [ ] Create the database
-- [ ] Select Template | Design CSS
-- [ ] new user jsp
-- [ ] user entity (java class)
-- [ ] user table
+- [x]  Create the database
+- [x]  Select Template | Design CSS
+- [x]  user entity (java class)
+- [x]  user table
 
 ## Week 6
 
-- [ ] user dao to add user to db (java class)
-- [ ] unit test dao add user functionality
-- [ ] product  dao to add product to db (java class)
-- [ ] unit test dao add product functionality
+- [x] user dao to add user to db (java class)
+- [x]  unit test dao add user functionality
+- [x]  product  dao to add product to db (java class)
+- [x]  unit test dao add product functionality
 
 ## Week 7
 
