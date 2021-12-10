@@ -1,5 +1,4 @@
-MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
---
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
 -- Host: 127.0.0.1    Database: Cosmetic
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.16.04.1
@@ -18,17 +17,20 @@ MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
 -- Table structure for table `user`
 --
+DROP TABLE IF EXISTS `product`;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                          `first_name` varchar(25) NOT NULL,
-                          `last_name` varchar(25) NOT NULL,
+                          `first_name` varchar(25)  NULL,
+                          `last_name` varchar(25)  NULL,
+                          `user_name` varchar(25) NOT NULL,
+                          `email` varchar(25)  NULL,
+                          `password` varchar(25) NULL,
                           PRIMARY KEY (`id`),
-                          UNIQUE KEY `user_id_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+                          UNIQUE KEY `user_name_UNIQUE` (`user_name`)) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Kathy','Sierra'),(2,'Herbert','Schilt'),(3,'Joseph','Ottinger');
+INSERT INTO `user` VALUES (1, 'Kathy','Sierra','kate'),(2,'Herbert','Schilt','herber'),(3,'Joseph','Ottinger','otti');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -45,7 +47,6 @@ UNLOCK TABLES;
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
