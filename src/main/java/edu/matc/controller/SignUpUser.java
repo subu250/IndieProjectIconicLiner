@@ -21,7 +21,7 @@ import java.io.IOException;
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             User user = new User();
             user.setUserName(req.getParameter("userName"));
-            user.setEmail(req.getParameter("emailAddress"));
+            user.setEmail(req.getParameter("email"));
             user.setFirstName(req.getParameter("firstName"));
             user.setLastName(req.getParameter("lastName"));
             user.setPassword(req.getParameter("password"));

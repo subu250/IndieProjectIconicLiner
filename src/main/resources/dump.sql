@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1, 'Kathy','Sierra','kate'),(2,'Herbert','Schilt','herber'),(3,'Joseph','Ottinger','otti');
+INSERT INTO `user` VALUES (1, 'Kathy','Sierra','ksierra'),(2,'Herbert','Schilt','hschilt'),(3,'Joseph','Ottinger','jotti');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,11 +53,11 @@ CREATE TABLE `product` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `brand` varchar(70) DEFAULT NULL,
                         `type` varchar(70) DEFAULT NULL,
-                        `user_id` int not null,
+                        `user_name` int not null,
                         PRIMARY KEY (`id`),
                         UNIQUE KEY `product_id_uindex` (`id`),
-                        KEY `product_user_id_fk` (`user_id`),
-                        CONSTRAINT `product_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                        KEY `product_user_id_fk` (`user_name`),
+                        CONSTRAINT `product_user_id_fk` FOREIGN KEY (`user_name`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

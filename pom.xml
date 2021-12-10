@@ -94,10 +94,104 @@
   <artifactId>mysql-connector-java</artifactId>
   <version>${mysql-version}</version>
 </dependency>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>RELEASE</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>${jstl-version}</version>
+  </dependency>
+  <!-- next 2 dependencies are for log4j -->
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>${log4j-version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>${log4j-version}</version>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.4.4.Final</version>
+  </dependency>
+  <!-- c3p0 - used to handle connection pooling with hibernate -->
+  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-c3p0</artifactId>
+    <version>5.4.4.Final</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+  <dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>javax.mail-api</artifactId>
+    <version>1.6.2</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.glassfish.jersey.core</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>${jersey-version}</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.glassfish.jersey.inject</groupId>
+    <artifactId>jersey-hk2</artifactId>
+    <version>${jersey-version}</version>
+  </dependency>
+
+  <!-- JavaMail API -->
+  <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+  </dependency>
+
+  <!-- Project LOMBOK-->
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.10</version>
+  </dependency>
+
+  <!-- hibernate-validator -->
+  <dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>javax.el</artifactId>
+    <version>2.2.4</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator-cdi</artifactId>
+    <version>5.2.4.Final</version>
+  </dependency>
+
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+  </dependency>
+
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+  </dependency>
+
 </dependencies>
 
 <build>
-<finalName>week-4-hibernate-exercise</finalName>
+<finalName>IndieProjectIconicLiner project</finalName>
 <pluginManagement>
   <plugins>
     <plugin>

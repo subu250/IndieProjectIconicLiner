@@ -1,7 +1,10 @@
 package edu.matc.entity;
+
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity(name = "User")
@@ -13,11 +16,6 @@ import javax.persistence.*;
  * @author subu
  */
 public class User {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -34,7 +32,12 @@ public class User {
     @Column(name = "password")
     private String password;
 
-  //@OneToMany(mappedBy = "User", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Product> products = new HashSet<>();
 
     /**
      * Instantiates a new User.

@@ -1,5 +1,7 @@
 package edu.matc.entity;
 
+import lombok.Data;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import javax.persistence.*;
  * @subu
  */
 
-//@Data
+@Data
 @Entity
 
 public class Location {
