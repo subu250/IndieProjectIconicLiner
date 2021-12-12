@@ -24,7 +24,6 @@ public class UserDaoTest {
     }
 
 
-
     /**
      * Verify successful insert of User
      */

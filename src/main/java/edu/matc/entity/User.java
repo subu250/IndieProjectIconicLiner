@@ -172,15 +172,35 @@ public class User {
         this.id = id;
     }
 
+
     /**
      * Instantiates a new User.
-     *
-     * @param userName the user name
+     * @param userName the userName
+     * @param products  the trip set
      */
-    public User(String userName) {
+
+    public User(String userName, Set<Product> products) {
         this.userName = userName;
+        this.products = products;
     }
 
+    /**
+     * Gets products.
+     *
+     * @return the product
+     */
+    public Set<Product> getProduct() {
+        return products;
+    }
+
+    /**
+     * Sets products.
+     *
+     * @param products the products
+     */
+    public void setProduct(Set<Product> products) {
+        this.products = products;
+    }
 
     @Override
     public String toString() {

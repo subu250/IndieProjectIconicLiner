@@ -39,7 +39,11 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1, 'Kathy','Sierra','ksierra'),(2,'Herbert','Schilt','hschilt'),(3,'Joseph','Ottinger','jotti');
+INSERT INTO user (email, first_name, last_name, password, user_name) VALUES ('Userone@gmail.com0', 'Kate', 'Nameone', 'katie', 'user123');
+INSERT INTO user (email, first_name, last_name, password, user_name) VALUES ('Usertwo@gmail.com1', 'Sierra', 'Anam', 'attn1', 'user234');
+INSERT INTO user (email, first_name, last_name, password, user_name) VALUES ('Userthree@gmail.com2', 'Sammy', 'Thomas', 'Samt', 'user345');
+INSERT INTO user (email, first_name, last_name, password, user_name) VALUES ('Userfour@gmail.com3', 'Tammy', 'Dorjw', 'tammy', 'user456');
+
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,16 +54,14 @@ UNLOCK TABLES;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
-                        `id` int(11) NOT NULL AUTO_INCREMENT,
-                        `brand` varchar(70) DEFAULT NULL,
-                        `type` varchar(70) DEFAULT NULL,
-                        `user_name` int not null,
-                        PRIMARY KEY (`id`),
-                        UNIQUE KEY `product_id_uindex` (`id`),
-                        KEY `product_user_id_fk` (`user_name`),
-                        CONSTRAINT `product_user_id_fk` FOREIGN KEY (`user_name`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+                           `id` int(11) NOT NULL AUTO_INCREMENT,
+                           `brand` varchar(70) DEFAULT NULL,
+                           `type` varchar(70) DEFAULT NULL,
+                           `user_name` varchar(70) not null,
+                           PRIMARY KEY (`id`),
+                           UNIQUE KEY `product_id_uindex` (`id`)) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `product`
@@ -67,6 +69,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Loreal','eyeliner',1),(2,'Rimmel','Liquid eyeliner',3),(4,'Revlon','eyepencil',5);
+INSERT INTO product (brand, type,user_name) VALUES ('paris', 'eyeshadow','samt');
+INSERT INTO product (brand, type, user_name) VALUES ('milan', 'eyelash','attn1');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
