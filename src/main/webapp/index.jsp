@@ -5,12 +5,37 @@
   Time: 10:05 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<<%@include file="head.jsp"%>
+<%@include file="contentType.jsp" %>
 <html>
-<head>
-    <title>Indie Project</title>
-</head>
-<body>
-
+<title>Welcome</title>
+<body class="container">
+<div class="card-panel">
+    <div class="section center">
+        <h1>Iconic Beauty</h1>
+        <div class="divider"></div>
+        <div class="row center">
+            <p></p>
+            <c:if test="${errorMsg != null}">
+                <p>${errorMsg}</p>
+            </c:if>
+            <c:if test="${empty userName}">
+                <a href="logIn">
+                    <button type="button" class="btn waves-effect waves-blue darken-2">Log in</button>
+                </a>
+            </c:if>
+        </div>
+        <div class="row center">
+            <c:if test="${!empty userName}">
+                <h3>Welcome ${userName}</h3>
+                <form action="viewProducts" class="" method="post">
+                    <input type="hidden" class="" id="userName" name="userName" value="${userName}">
+                    <button type="submit" name="submit" class="btn waves-effect waves-blue darken-2">View Trips
+                    </button>
+                </form>
+            </c:if>
+        </div>
+    </div>
+</div>
 </body>
 </html>

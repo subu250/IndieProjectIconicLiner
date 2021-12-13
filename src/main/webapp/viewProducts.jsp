@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="contentType.jsp" />
 <html>
 <jsp:include page="head.jsp" />
 
@@ -17,30 +16,22 @@
 </script>
 
 <body role="document">
-<jsp:include page="navbar.jsp" />
+<jsp:include page="viewProducts.jsp" />
 
 <div class="container-fluid"  role="main">
-    <h2>Trails: </h2>
-    <table id="trailsTable" class="display" cellspacing="0" width="100%">
+    <h2>Products: </h2>
+    <table id="products" class="display" cellspacing="0" width="100%">
         <thead>
-        <th>Trail</th>
-        <th>Description</th>
-        <th>Length</th>
+\        <th>Brand</th>
         <th>Type</th>
-        <th>Difficulty</th>
-        <th>Map</th>
-        <th>Website</th>
+        <th>User Name</th>
         </thead>
         <tbody>
-        <c:forEach var="trail" items="${trails}">
+        <c:forEach var="product" items="${products}">
             <tr>
-                <td>${trail.name}</td>
-                <td>${trail.description}</td>
-                <td>${trail.length} ${trail.lengthUnits}</td>
-                <td>${trail.type.name}</td>
-                <td>${trail.difficulty.name}</td>
-                <td>${trail.trailMap}</td>
-                <td>${trail.website}</td>
+                <td>${product.user_name}</td>
+                <td>${product.brand}</td>
+                <td>${product.type}</td>
             </tr>
         </c:forEach>
         </tbody>
@@ -48,14 +39,8 @@
 </div>
 
 </body>
-<jsp:include page="contentEnd.jsp" />
 <jsp:include page="footer.jsp" />
 </html>
-
-
-
-
-
 
   </body>
 </html>
