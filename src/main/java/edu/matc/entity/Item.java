@@ -23,7 +23,7 @@ public class Item {
     public Item(String name, String description, Product product) {
         this.name = name;
         this.description = description;
-        this.product = product;
+      this.product = product;
     }
 
     @Id
@@ -35,7 +35,6 @@ public class Item {
     private String name;
     @NotEmpty
     private String description;
-
     @ManyToOne
     private Product product;
 
@@ -53,7 +52,7 @@ public class Item {
         return product;
     }
 
-    public void setProduct(Product product) {
+  public void setProduct(Product product) {
         this.product = product;
     }
 
@@ -71,7 +70,7 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", product=" + product +
+             ", product=" + product +
                 '}';
     }
 }

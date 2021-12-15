@@ -45,8 +45,8 @@ public class ViewProduct extends HttpServlet {
             }
             // get the User object
             User user = (User) userDao.getById(userId);
-            productList = user.getProduct();
-            req.setAttribute("products", productList);
+           // productList = user.getProduct();
+          //  req.setAttribute("products", productList);
             session.setAttribute("userName", userName);
         } catch (Exception e) {
             logger.error("Error retrieving user ", e);

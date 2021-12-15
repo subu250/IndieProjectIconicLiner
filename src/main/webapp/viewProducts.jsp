@@ -13,9 +13,9 @@
 <div class="card-panel">
     <div class="section center">
         <h1>Awesome Products</h1>
-        <table class="table" id="productsTable">
+        <table class="table" id="productTable">
             <thead>
-            <th>Products</th>
+
             <th></th>
             <th></th>
             </thead>
@@ -24,7 +24,7 @@
                 <form action="productInfo" class="" method="post">
                     <tr>
                         <td>${product.name}</td>
-                        <td><input type="hidden" class="" id="productID" name="productID" value="${product.id}"></td>
+                        <td><input type="hidden" class="" id="product.user_name" name="product.user_name" value="${product.user_name}"></td>
                         <td>
                             <button type="submit" name="submit" class="btn-small waves-effect waves-blue">View</button>
                         </td>

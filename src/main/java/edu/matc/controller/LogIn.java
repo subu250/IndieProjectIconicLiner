@@ -4,33 +4,60 @@ import edu.matc.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Properties;
 
-
-/** Authentication process using AWS Cognito
- *
- */
 @WebServlet(
         urlPatterns = {"/logIn"}
 )
 
-/** Authentication process using AWS Cognito
+/** Begins the authentication process using AWS Cognito
  *
  */
 public class LogIn extends HttpServlet implements PropertiesLoader {
-
+    Properties properties;
     private final Logger logger = LogManager.getLogger(this.getClass());
+    public static String CLIENT_ID;
+    public static String CLIENT_SECRET;
+    public static String LOGIN_URL;
+    public static String OAUTH_URL;
+    public static String REDIRECT_URL;
+     public static String REGION;
+    public static String POOL_ID;
+
 
     @Override
     public void init() throws ServletException {
         super.init();
+        loadProperties();
+    }
+
+    /**
+     * Read in the cognito props file and get the client id and required urls
+     * for authenticating a user.
+     */
+    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
+    // 4 to do this work a single time and put the properties in the application scope
+    private void loadProperties() {
+        try {
+            properties = loadProperties("/cognito.properties");
+            CLIENT_ID = properties.getProperty("client.id");
+            CLIENT_SECRET = properties.getProperty("client.secret");
+            LOGIN_URL = properties.getProperty("loginURL");
+            OAUTH_URL = properties.getProperty("oauthURL");
+            REDIRECT_URL = properties.getProperty("redirectURL");
+            REGION = properties.getProperty("region");
+            POOL_ID  = properties.getProperty("poolId");
+        } catch (IOException ioException) {
+            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+        } catch (Exception e) {
+            logger.error("Error loading properties" + e.getMessage(), e);
+        }
     }
 
     /**
@@ -42,19 +69,8 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       //cognito info
-        ServletContext server = getServletContext();
-        String redirect_url = (String)server.getAttribute("REDIRECT_URL");
-        String client_id = (String)server.getAttribute("CLIENT_ID");
-        String login_url = (String)server.getAttribute("LOGIN_URL");
-
-        if (redirect_url==null || client_id==null || login_url==null){
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
-            dispatcher.forward(req, resp);
-        } else {
-            String url = login_url + "?response_type=code&client_id=" + client_id + "&redirect_uri=" + redirect_url;
-            resp.sendRedirect(url);
-        }
-
+        // TODO if properties weren't loaded properly, route to an error page
+        String url = LOGIN_URL + "?response_type=code&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
+        resp.sendRedirect(url);
     }
 }

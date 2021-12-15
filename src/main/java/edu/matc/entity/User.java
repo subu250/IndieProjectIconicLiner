@@ -37,8 +37,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Product> products = new HashSet<>();
+   // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    //private Set<Product> products = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -177,65 +177,65 @@ public class User {
         this.id = id;
     }
 
-    /**
-     * Add product.
-     *
-     * @param product the product
-     */
-    public void addProduct(Product product) {
-        products.add(product);
-        // product.setUser(this);
-    }
-
-    /**
-     * Remove product.
-     *
-     * @param product the product
-     */
-    public void removeProduct(Product product) {
-        products.remove(product);
-    }
-
-    /**
-     * Instantiates a new User.
-     *
-     * @param userName the userName
-     * @param products the trip set
-     */
-
-    public User(String userName, Set<Product> products) {
-        this.userName = userName;
-        this.products = products;
-    }
-
-    /**
-     * Instantiates a new User.
-     *
-     * @param userName the user name
-     * @param password the password
-     */
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
-    /**
-     * Gets products.
-     *
-     * @return the product
-     */
-    public Set<Product> getProduct() {
-        return products;
-    }
-
-    /**
-     * Sets products.
-     *
-     * @param products the products
-     */
-    public void setProduct(Set<Product> products) {
-        this.products = products;
-    }
+//    /**
+//     * Add product.
+//     *
+//     * @param product the product
+//     */
+//    public void addProduct(Product product) {
+//        products.add(product);
+//        // product.setUser(this);
+//    }
+//
+//    /**
+//     * Remove product.
+//     *
+//     * @param product the product
+//     */
+//    public void removeProduct(Product product) {
+//       // products.remove(product);
+//    }
+//
+//    /**
+//     * Instantiates a new User.
+//     *
+//     * @param userName the userName
+//     * @param products the trip set
+//     */
+//
+//    public User(String userName, Set<Product> products) {
+//        this.userName = userName;
+//        //this.products = products;
+//    }
+//
+//    /**
+//     * Instantiates a new User.
+//     *
+//     * @param userName the user name
+//     * @param password the password
+//     */
+//    public User(String userName, String password) {
+//        this.userName = userName;
+//        this.password = password;
+//    }
+//
+//    /**
+//     * Gets products.
+//     *
+//     * @return the product
+//     */
+//    public Set<Product> getProduct() {
+//        return products;
+//    }
+//
+//    /**
+//     * Sets products.
+//     *
+//     * @param products the products
+//     */
+//    public void setProduct(Set<Product> products) {
+//        this.products = products;
+//    }
 
     @Override
     public String toString() {

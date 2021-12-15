@@ -21,11 +21,11 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @ManyToOne
-    private User user;
+   // @ManyToOne
+   // private User user;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Item> itemSet = new HashSet<>();
+    //@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    //private Set<Item> itemSet = new HashSet<>();
 
     @Column(name = "user_name")
     private String user_name;
@@ -121,28 +121,28 @@ public class Product {
      *
      * @return the item set
      */
-    public Set<Item> getItemSet() {
-        return itemSet;
-    }
+   // public Set<Item> getItemSet() {
+       // return itemSet;
+  //  }
 
     /**
      * Sets typeSet.
      *
-     * @param itemSet the note set
+    // * @param itemSet the item set
      */
-    public void setItemSet(Set<Item> itemSet) {
-        this.itemSet = itemSet;
-    }
+   // public void setItemSet(Set<Item> itemSet) {
+       // this.itemSet = itemSet;
+   // }
 
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
-                ", user=" + user +
+               // ", user=" + user +
                 ", user_name='" + user_name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", type='" + type + '\'' +
-                ", itemSet='" + itemSet + '\'' +
+              //  ", itemSet='" + itemSet + '\'' +
                 '}';
     }
 

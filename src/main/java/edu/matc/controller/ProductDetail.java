@@ -38,7 +38,7 @@ public class ProductDetail extends HttpServlet {
         String page = "/productDetails.jsp";
         try {
             Product productItem= (Product) genericDao.getById(id);
-            List<Item> types = new ArrayList(productItem.getItemSet());
+         //   List<Item> types = new ArrayList(productItem.getItemSet());
             logger.debug("The list of products: {}", productItem);
         } catch (Exception e) {
             logger.error("Error Info", e);
