@@ -5,42 +5,41 @@
   Time: 11:16 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="head.jsp" %>
+<%@include file="contentType.jsp" %>
 <html>
-<jsp:include page="head.jsp" />
+<title>Awesome Products</title>
+<body class="container">
+<div class="card-panel">
+    <div class="section center">
+        <h1>Awesome Products</h1>
+        <table class="table" id="productsTable">
+            <thead>
+            <th>Products</th>
+            <th></th>
+            <th></th>
+            </thead>
+            <tbody>
+            <c:forEach var="product" items="${products}">
+                <form action="productInfo" class="" method="post">
+                    <tr>
+                        <td>${product.name}</td>
+                        <td><input type="hidden" class="" id="productID" name="productID" value="${product.id}"></td>
+                        <td>
+                            <button type="submit" name="submit" class="btn-small waves-effect waves-blue">View</button>
+                        </td>
+                    </tr>
+                </form>
+            </c:forEach>
+            </tbody>
+        </table>
 
-<script type="text/javascript" class="init">
-    $(document).ready( function () {
-        $('#trailsTable').DataTable();
-    } );
-</script>
-
-<body role="document">
-<jsp:include page="viewProducts.jsp" />
-
-<div class="container-fluid"  role="main">
-    <h2>Products: </h2>
-    <table id="products" class="display" cellspacing="0" width="100%">
-        <thead>
-\        <th>Brand</th>
-        <th>Type</th>
-        <th>User Name</th>
-        </thead>
-        <tbody>
-        <c:forEach var="product" items="${products}">
-            <tr>
-                <td>${product.user_name}</td>
-                <td>${product.brand}</td>
-                <td>${product.type}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+    </div>
+    <div class="row center">
+        <a href="add">
+            <button type="button" class="btn waves-effect waves-blue">Product</button>
+        </a>
+    </div>
 </div>
-
 </body>
-<jsp:include page="footer.jsp" />
-</html>
-
-  </body>
 </html>

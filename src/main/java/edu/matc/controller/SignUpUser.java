@@ -25,6 +25,8 @@ import java.io.IOException;
             user.setFirstName(req.getParameter("firstName"));
             user.setLastName(req.getParameter("lastName"));
             user.setPassword(req.getParameter("password"));
+
+
             logger.debug("Adding User: " + user);
 
 

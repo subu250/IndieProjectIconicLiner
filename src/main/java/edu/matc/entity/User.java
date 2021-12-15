@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -33,30 +34,34 @@ public class User {
     private String password;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Product> products = new HashSet<>();
 
     /**
      * Instantiates a new User.
-     *  @param firstName the first name
+     */
+    public User() {
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
      * @param lastName  the last name
      * @param id        the id
      * @param userName
      * @param password
      */
-    public User(String firstName, String lastName, String userName, String email, int id, String password) {
+    public User(String firstName, String lastName, String userName, String email, int id, String password, String givenName, String familyName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.email = email;
         this.id = id;
         this.password = password;
-    }
-
-    public User() {
 
     }
 
@@ -172,16 +177,46 @@ public class User {
         this.id = id;
     }
 
+    /**
+     * Add product.
+     *
+     * @param product the product
+     */
+    public void addProduct(Product product) {
+        products.add(product);
+        // product.setUser(this);
+    }
+
+    /**
+     * Remove product.
+     *
+     * @param product the product
+     */
+    public void removeProduct(Product product) {
+        products.remove(product);
+    }
 
     /**
      * Instantiates a new User.
+     *
      * @param userName the userName
-     * @param products  the trip set
+     * @param products the trip set
      */
 
     public User(String userName, Set<Product> products) {
         this.userName = userName;
         this.products = products;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param userName the user name
+     * @param password the password
+     */
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
     }
 
     /**
@@ -212,6 +247,18 @@ public class User {
                 ", password='" + password + '\'' +
                 ", id=" + id +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && Objects.equals(userName, user.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userName);
     }
 }
 

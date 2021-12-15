@@ -29,6 +29,8 @@ CREATE TABLE `user` (
                           `user_name` varchar(25) NOT NULL,
                           `email` varchar(25)  NULL,
                           `password` varchar(25) NULL,
+                          `given_name` varchar(25) NOT NULL,
+                          `family_name` varchar(25) NOT NULL,
                           PRIMARY KEY (`id`),
                           UNIQUE KEY `user_name_UNIQUE` (`user_name`)) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -58,6 +60,7 @@ CREATE TABLE `product` (
                            `brand` varchar(70) DEFAULT NULL,
                            `type` varchar(70) DEFAULT NULL,
                            `user_name` varchar(70) not null,
+                           `itemSet` varchar(70) DEFAULT NULL,
                            PRIMARY KEY (`id`),
                            UNIQUE KEY `product_id_uindex` (`id`)) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

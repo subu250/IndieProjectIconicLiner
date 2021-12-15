@@ -81,14 +81,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // Get the cognito info from ServletContext for authenticating a user.
-        ServletContext servletContext = getServletContext();
-        CLIENT_ID = (String)servletContext.getAttribute("CLIENT_ID");
-        CLIENT_SECRET = (String)servletContext.getAttribute("CLIENT_SECRET");
-        OAUTH_URL = (String)servletContext.getAttribute("OAUTH_URL");
-        LOGIN_URL = (String)servletContext.getAttribute("LOGIN_URL");
-        REDIRECT_URL = (String)servletContext.getAttribute("REDIRECT_URL");
-        REGION = (String)servletContext.getAttribute("REGION");
-        POOL_ID = (String)servletContext.getAttribute("POOL_ID");
+         ServletContext servletContext = getServletContext();
+        CLIENT_ID = "7ppk92pfq3tcn12u9e1rmjv4h0";
+        CLIENT_SECRET = "20pdhltdc94grgivijdsa7uj10k2b30jes8ssj5u361otfoi7g7";
+        OAUTH_URL = "https://ent-java-indie-project-subu250.auth.us-east-2.amazoncognito.com/oauth2/token";
+        LOGIN_URL = "https://ent-java-indie-project-subu250.auth.us-east-2.amazoncognito.com/auth";
+        REDIRECT_URL = "http://localhost:8080/IndieProjectIconicLiner_war/auth";
+        REGION = "us-east-2";
+        POOL_ID = "us-east-2_S2SQr8hrK";
         loadKey();
         logger.debug("Inside the Auth doGet");
         String authCode = req.getParameter("code");
@@ -117,6 +117,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
     }
+
 
     /**
      * Sends the request for a token to Cognito and maps the response
@@ -193,11 +194,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         userDao = new GenericDao(User.class);
         List<User> users = userDao.getByPropertyEqual("username", userName);
         logger.info("The Users List from database from the username: " + users);
-        if (users.isEmpty()){
-            User newUser = new User();
-            userDao.insert(newUser);
-            logger.info("Inserted a new user: " + newUser);
-        }
+        //if (users.isEmpty()){
+           // User newUser = new User(users);
+           // newUser
+           /// userDao.insert(newUser);
+           // logger.info("Inserted a new user: " + newUser);
+       // }
         return userName;
     }
 

@@ -3,6 +3,8 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The product type.
@@ -21,6 +23,9 @@ public class Product {
 
     @ManyToOne
     private User user;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Item> itemSet = new HashSet<>();
 
     @Column(name = "user_name")
     private String user_name;
@@ -91,25 +96,42 @@ public class Product {
     }
 
     /**
-     * Gets username.
+     * Gets user_name.
      *
-     * @return the user_name
+     * @return the tuser_name.
      */
 
     public String getUser_name() {
         return user_name;
     }
 
-
     /**
-     * Sets username.
+     * Sets user_name.
      *
      * @return the user_name
      */
 
-
     public void setUser_name(String user_name) {
         this.user_name = user_name;
+    }
+
+
+    /**
+     * Gets Item set.
+     *
+     * @return the item set
+     */
+    public Set<Item> getItemSet() {
+        return itemSet;
+    }
+
+    /**
+     * Sets typeSet.
+     *
+     * @param itemSet the note set
+     */
+    public void setItemSet(Set<Item> itemSet) {
+        this.itemSet = itemSet;
     }
 
     @Override
@@ -120,6 +142,7 @@ public class Product {
                 ", user_name='" + user_name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", type='" + type + '\'' +
+                ", itemSet='" + itemSet + '\'' +
                 '}';
     }
 
