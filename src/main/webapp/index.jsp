@@ -30,7 +30,7 @@
                 <h3>Welcome ${userName}</h3>
                 <form action="viewProducts" class="" method="post">
                     <input type="hidden" class="" id="userName" name="userName" value="${userName}">
-                    <button type="submit" name="submit" class="btn waves-effect waves-blue darken-2">View Trips
+                    <button type="submit" name="submit" class="btn waves-effect waves-blue darken-2">View Products
                     </button>
                 </form>
             </c:if>
