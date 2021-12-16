@@ -40,6 +40,7 @@ import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 /**
@@ -53,6 +54,7 @@ import java.util.stream.Collectors;
  */
 
 public class Auth extends HttpServlet implements PropertiesLoader {
+    Properties properties;
 
     String CLIENT_ID;
     String CLIENT_SECRET;
@@ -68,6 +70,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     public void init() throws ServletException {
         super.init();
+        loadProperties();
+
     }
 
     /**
@@ -82,13 +86,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // Get the cognito info from ServletContext for authenticating a user.
         ServletContext servletContext = getServletContext();
-        CLIENT_ID = "7ppk92pfq3tcn12u9e1rmjv4h0";
-        CLIENT_SECRET = "20pdhltdc94grgivijdsa7uj10k2b30jes8ssj5u361otfoi7g7";
-        OAUTH_URL = "https://ent-java-indie-project-subu250.auth.us-east-2.amazoncognito.com/oauth2/token";
-        LOGIN_URL = "https://ent-java-indie-project-subu250.auth.us-east-2.amazoncognito.com/login";
-       REDIRECT_URL = "http://localhost:8080/IndieProjectIconicLiner_war/auth";
-        REGION = "us-east-2";
-       POOL_ID = "us-east-2_S2SQr8hrK";
         loadKey();
         logger.debug("Inside the Auth doGet");
         String authCode = req.getParameter("code");
@@ -194,9 +191,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         List<User> users = userDao.getByPropertyEqual("userName", userName);
         logger.info("The Users List from database from the username: " + users);
         if (users.isEmpty()){
-            User newUser = new User
-                    ();
-
+            User newUser = new User();
+            newUser.setUserName(userName);
             userDao.insert(newUser);
             logger.info("Inserted a new user: " + newUser);
         }
@@ -256,6 +252,22 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             logger.error("Cannot load json..." + ioException.getMessage(), ioException);
         } catch (Exception e) {
             logger.error("Error loading json" + e.getMessage(), e);
+        }
+    }
+    private void loadProperties() {
+        try {
+            properties = loadProperties("/cognito.properties");
+            CLIENT_ID = properties.getProperty("client.id");
+            CLIENT_SECRET = properties.getProperty("client.secret");
+            OAUTH_URL = properties.getProperty("oauthURL");
+            LOGIN_URL = properties.getProperty("loginURL");
+            REDIRECT_URL = properties.getProperty("redirectURL");
+            REGION = properties.getProperty("region");
+            POOL_ID = properties.getProperty("poolId");
+        } catch (IOException ioException) {
+            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+        } catch (Exception e) {
+            logger.error("Error loading properties" + e.getMessage(), e);
         }
     }
 }

@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
 @Entity(name = "User")
 @Table(name= "user")
 
@@ -37,7 +36,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-   // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     //private Set<Product> products = new HashSet<>();
 
     /**
@@ -177,16 +176,15 @@ public class User {
         this.id = id;
     }
 
-//    /**
-//     * Add product.
-//     *
-//     * @param product the product
-//     */
-//    public void addProduct(Product product) {
-//        products.add(product);
-//        // product.setUser(this);
-//    }
-//
+    /**
+     //     * Add product.
+     //     *
+     //     * @param product the product
+     //     */
+    //	public void addProduct(Product product) {
+    //  	products.add(product);
+    //   product.setUser(this);
+    // }
 //    /**
 //     * Remove product.
 //     *
@@ -218,17 +216,13 @@ public class User {
 //        this.userName = userName;
 //        this.password = password;
 //    }
-//
-//    /**
-//     * Gets products.
-//     *
-//     * @return the product
-//     */
-//    public Set<Product> getProduct() {
-//        return products;
-//    }
-//
-//    /**
+
+
+    // public Set<Product> getProduct() {
+    //   return products;
+    //}
+
+//   /**
 //     * Sets products.
 //     *
 //     * @param products the products

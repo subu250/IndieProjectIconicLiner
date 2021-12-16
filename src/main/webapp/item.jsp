@@ -2,9 +2,10 @@
   Created by IntelliJ IDEA.
   User: student
   Date: 12/15/21
-  Time: 10:03 AM
+  Time: 9:46 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp" %>
 <%@include file="contentType.jsp" %>
@@ -21,7 +22,7 @@
         <h1>${item.name}</h1>
         <div class="divider"></div>
         <h2>Items</h2>
-        <form action="item" class="" method="post">
+        <form action="item.jsp" class="" method="post">
             <table id="itemTable">
                 <thead>
                 <th>Name</th>

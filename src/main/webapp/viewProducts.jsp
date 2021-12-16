@@ -36,7 +36,7 @@
 
     </div>
     <div class="row center">
-        <a href="add">
+        <a href="item.jsp">
             <button type="button" class="btn waves-effect waves-blue">Product</button>
         </a>
     </div>

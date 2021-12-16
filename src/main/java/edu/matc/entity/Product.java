@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  * The product type.
-/**
+ /**
  * The type Product.
  * @author subu
  */
@@ -21,11 +21,11 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-   // @ManyToOne
-   // private User user;
+    //@ManyToOne
+    //private User user;
 
-    //@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    //private Set<Item> itemSet = new HashSet<>();
+    // @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    // private Set<Item> item = new HashSet<>();
 
     @Column(name = "user_name")
     private String user_name;
@@ -85,35 +85,35 @@ public class Product {
         return type;
     }
 
-    /**
-     * Sets type.
-     *
-     * @return the type
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * Gets user_name.
-     *
-     * @return the tuser_name.
-     */
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    /**
-     * Sets user_name.
-     *
-     * @return the user_name
-     */
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
+////    /**
+////     * Sets type.
+////     *
+////     * @return the type
+////     */
+////
+////    public void setType(String type) {
+////        this.type = type;
+////    }
+////
+////    /**
+////     * Gets user.
+////     *
+////     * @return the user.
+////     */
+////
+////    public User getUser() {
+////        return user;
+////    }
+//
+//    /**
+//     * Sets user_name.
+//     *
+//     * @return the user
+//     */
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
 
     /**
@@ -121,28 +121,27 @@ public class Product {
      *
      * @return the item set
      */
-   // public Set<Item> getItemSet() {
-       // return itemSet;
-  //  }
-
-    /**
-     * Sets typeSet.
-     *
-    // * @param itemSet the item set
-     */
-   // public void setItemSet(Set<Item> itemSet) {
-       // this.itemSet = itemSet;
-   // }
+// public Set<Item> getItem() {
+//       return item;
+//  }
+//
+//    /**
+//     * Sets typeSet.
+//     *
+//    // * @param itemSet the item set
+//     */
+//   public void setItem(Set<Item> product) {
+//       this.item = item;
+//   }
 
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
-               // ", user=" + user +
-                ", user_name='" + user_name + '\'' +
+                ", user_name=" + user_name +
                 ", brand='" + brand + '\'' +
                 ", type='" + type + '\'' +
-              //  ", itemSet='" + itemSet + '\'' +
+                // ", item='" + item + '\'' +
                 '}';
     }
 

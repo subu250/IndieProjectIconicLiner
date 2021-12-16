@@ -22,15 +22,19 @@
                     <button type="button" class="btn waves-effect waves-blue darken-2">Log in</button>
                 </a>
             </c:if>
+            <c:if test="${not empty userName}">
+
+
+            </c:if>
         </div>
-<%--        <div class="row center">--%>
-<%--                <h3>Welcome ${userName}</h3>--%>
-<%--                <form action="viewProducts" class="" method="post">--%>
-<%--                    <input type="hidden" class="" id="userName" name="userName" value="${userName}">--%>
-<%--                    <button type="submit" name="submit" class="btn waves-effect waves-blue darken-2">View Products--%>
-<%--                    </button>--%>
-<%--                </form>--%>
-<%--        </div>--%>
+        <div class="row center">
+            <h3>Welcome ${userName}</h3>
+            <form action="viewProducts" class="" method="post">
+                <input type="hidden" class="" id="userName" name="userName" value="${userName}">
+                <button type="submit" name="submit" class="btn waves-effect waves-blue darken-2">View Products
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 </body>
